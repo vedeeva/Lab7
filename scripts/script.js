@@ -16,3 +16,10 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
 });
+
+document.querySelector('header').children[1].addEventListener('click', () => {
+  setState({page: 'settings'});
+});
+document.querySelector('header').children[0].addEventListener('click', () => {
+  setState({page: ''});
+});
