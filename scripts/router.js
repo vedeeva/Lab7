@@ -49,8 +49,10 @@ router.setState = function(state) {
         header.children[0].innerHTML = 'Settings';
         body.className = 'settings';
         history.pushState(state, '', '#settings');
-    } else {
-        root.innerHTML = `This route is not defined`;
+    } else if(state.page == 'entry'){
+      header.children[0].innerHTML = 'Entry';
+      body.className = 'single-entry';
+      history.pushState(state, '', '#entry');
     }
 }
 }

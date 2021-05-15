@@ -13,6 +13,9 @@ document.addEventListener('DOMContentLoaded', () => {
         let newPost = document.createElement('journal-entry');
         newPost.entry = entry;
         document.querySelector('main').appendChild(newPost);
+        document.querySelector('journal-entry').addEventListener('click', ()=>{
+          setState({page: 'entry'});
+        })
       });
     });
 });
@@ -23,3 +26,4 @@ document.querySelector('header').children[1].addEventListener('click', () => {
 document.querySelector('header').children[0].addEventListener('click', () => {
   setState({page: ''});
 });
+
