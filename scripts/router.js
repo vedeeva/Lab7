@@ -39,10 +39,12 @@ router.setState = function(state) {
    *    2. You may modify the parameters of setState() as much as you like
    */
 
-   if (state.page === '') {
+   if (state.page === 'back') {
     header.children[0].innerHTML = 'Journal Entries';
     body.className = '';
+    history.back();
     history.pushState(state, '', '');
+    location.reload();
 } else {
 
     if (state.page == 'settings') {
@@ -50,9 +52,9 @@ router.setState = function(state) {
         body.className = 'settings';
         history.pushState(state, '', '#settings');
     } else if(state.page == 'entry'){
-      header.children[0].innerHTML = 'Entry';
+      header.children[0].innerHTML = 'Entry '+state.number;
       body.className = 'single-entry';
-      history.pushState(state, '', '#entry');
+      history.pushState(state, '', '#entry'+state.number);
     }
 }
 }
