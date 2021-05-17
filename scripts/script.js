@@ -6,8 +6,7 @@ const setState = router.setState;
 var CACHE_NAME = 'my-site-cache-v1';
 var urlsToCache = [
   '/',
-  'style.css',
-  '/scripts/main.js'
+  '/scripts/router.js'
 ];
 
 self.addEventListener('install', function(event) {
